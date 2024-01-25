@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+</head>
+<body>
+    <!-- 所谓的防抖指的就是如果频繁的进行某一操作，会取消前面的所有操作，只执行最后一次的回调 -->
+    <!-- 目的就是为了增加性能，提升效率 -->
+    
+    <input type="text" name="" id="" placeholder="请输入内容">
+    <script>
+        const inputBox = document.querySelector('input')
+        // 非防抖动方式,多次改变输入的值就调用回调函数
+        // inputBox.oninput = function() {
+        //     console.log('我准备向服务器发请求');
+        // }
+        // 使用防抖
+        inputBox.oninput = _.debounce(function() {
+            console.log('我准备向服务器发请求');
+        }, 1000)
+    </script>
+</body>
+</html>

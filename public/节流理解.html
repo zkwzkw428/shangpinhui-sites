@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <style>
+        span {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 节流就是将频繁触发的事件，变为少次触发，减少服务器开销，在规定时间结束之前下次触发不会执行，必须得等到间隔时间结束才执行下一次的回调 -->
+    <button>点击我</button>
+    <span class="iconfont icon-zhixiangshang"></span>
+    <script>
+        const btn = document.querySelector('button')
+        btn.onclick = _.throttle(function() {
+            console.log('只能一秒之后我才响应');
+        }, 1000)
+    </script>
+</body>
+</html>
